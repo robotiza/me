@@ -1,0 +1,1 @@
+https://garden.bradwoods.io/notes/javascript/state-management/xstate/global-state
