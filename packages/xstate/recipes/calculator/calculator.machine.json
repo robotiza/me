@@ -321,19 +321,6 @@
             }
         },
         "alert": {
-            "invoke": {
-                "src": {
-                    "actions": [
-                        "alert"
-                    ]
-                },
-                "onDone": {
-                    "target": "start",
-                    "actions": [
-                        "reset"
-                    ]
-                }
-            }
         }
     }
 }
