@@ -29,12 +29,6 @@ const machine = Machine<CalculatorContext>(
     options
 );
 
-export const reducer = (prevState: CalculatorState, action: CalculatorAction): CalculatorState => {
-    console.log('Event - Payload', { event: action.type, payload: action.payload });
-
-    return prevState;
-}
-
 const CalculatorMachine: React.FC = () => {
     const [{ context, value }, send] = useMachine(machine, {});
     const dispatch = (action: CalculatorAction): void => {
@@ -49,7 +43,7 @@ const CalculatorMachine: React.FC = () => {
     );
     return (
         <Calculator state={state} dispatch={dispatch} />
-    )
+    );
 };
 
 const meta = {

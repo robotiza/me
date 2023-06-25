@@ -1,4 +1,4 @@
-import { assign } from "@xstate/immer";
+import { assign } from "xstate";
 import { ActionFunction, EventObject } from "xstate";
 import { CalculatorContext } from "./context";
 import { CalculatorEventObject } from "./event";
@@ -70,7 +70,7 @@ export const recordOperator = assign<CalculatorContext, CalculatorEventObject>({
 
 export const setOperator = assign<CalculatorContext, CalculatorEventObject>({
     operator: context => context.operator,
-}); cd
+});
 
 export const computePercentage = assign<CalculatorContext, CalculatorEventObject>({
     display: context => (+context.display / 100).toString(),
@@ -79,9 +79,9 @@ export const computePercentage = assign<CalculatorContext, CalculatorEventObject
 export const compute = assign<CalculatorContext, CalculatorEventObject>({
     display: context => {
         const result = doMath(
-            context.operand1,
-            context.operand2,
-            context.operator,
+            context.operand1!,
+            context.operand2!,
+            context.operator!,
         );
 
         console.log(
