@@ -47,7 +47,7 @@ const CalculatorMachine: React.FC = () => {
 };
 
 const meta = {
-    title: 'Example/Calculator',
+    title: 'xstate/Calculator',
     component: CalculatorMachine,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],

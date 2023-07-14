@@ -3,7 +3,7 @@ import { useMachine, useSelector } from '@xstate/react';
 import { useEffect } from 'react';
 import { SourceFile } from './apiTypes';
 import { useAuth } from './authContext';
-import { getSupabaseClient } from './authMachine';
+// import { getSupabaseClient } from './authMachine';
 import { HeartIcon, HeartOutlinedIcon } from './Icons';
 import { likesMachine } from './likesMachine';
 import { useSourceActor } from './sourceMachine';
@@ -11,14 +11,14 @@ import { callAPI } from './utils';
 
 export const LikeButton = () => {
   const authService = useAuth();
-  const supabaseClient = useSelector(authService, getSupabaseClient);
+  // const supabaseClient = useSelector(authService, getSupabaseClient);
 
   const [sourceState] = useSourceActor();
 
   const [state, send] = useMachine(likesMachine, {
     guards: {
       isLoggedIn: () => {
-        return Boolean(supabaseClient.auth.session());
+        return true; // Boolean(supabaseClient.auth.session());
       },
     },
     services: {

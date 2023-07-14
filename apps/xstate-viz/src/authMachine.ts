@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+// import { createClient } from '@supabase/supabase-js';
 import { NextRouter } from 'next/router';
 import {
   ActorRefFrom,
@@ -22,13 +22,13 @@ import { callAPI, isSignedIn } from './utils';
 
 const authModel = createModel(
   {
-    client: createClient(
+    client: {}, /* createClient(
       process.env.NEXT_PUBLIC_SUPABASE_API_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_API_KEY,
       {
         localStorage: storage,
       },
-    ),
+    )*/
     notifRef: null! as ActorRefFrom<typeof notifMachine>,
     sourceRef: null as SourceMachineActorRef | null,
     loggedInUserData: null as LoggedInUser | null,
